@@ -87,9 +87,7 @@ for data in train_data:
     print(data)
 print("--------------------")
 
-
-# Check if the input contains relevant movie-related terms
-@retry(retries=float('inf'), delay=1)
+@retry()
 def ask():
     user_input = input("Enter text: ")
     prediction = predict_text(model, user_input)
